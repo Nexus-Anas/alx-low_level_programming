@@ -10,27 +10,24 @@
  */
 int main(void)
 {
-	int i = 0;
-	int j = 0;
+	int i = '0';
+	int j = '0';
 
-	while (i < 10)
+	for (i = '0'; i <= '9'; i++)
 	{
-		while (j < 10)
+		for (j = '0'; j <= '9'; j++)
 		{
-			if (i != j && i < j)
+			if (!((i == j) || (i > j)))
 			{
-				putchar('0' + i);
-				putchar('0' + j);
-
-				if (i + j != 17)
+				putchar(i);
+				putchar(j);
+				if (!(i == '8' && j == '9'))
 				{
 					putchar(',');
 					putchar(' ');
 				}
 			}
-			j++;
 		}
-		i++;
 	}
 	putchar('\n');
 	return (0);
