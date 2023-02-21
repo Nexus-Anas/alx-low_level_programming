@@ -7,26 +7,24 @@
 int main(void)
 {
 	int a = 0;
-	long b = 1, c = 2;
+	unsigned long b = 0, c = 1, sum;
 
 	while (a < 50)
 	{
-		if (a == 0)
+		sum = b + c;
+		printf("%lu", sum);
+
+		b = c;
+		c = sum;
+		if (a == 49)
 		{
-			printf("%ld", b);
-		}
-		else if (a == 1)
-		{
-			printf("%ld", c);
+			printf("\n");
 		}
 		else
 		{
-			c += b;
-			b = c - b;
-			printf(", %ld", c);
+			printf(",");
 		}
 		++a;
 	}
-	printf("\n");
 	return (0);
 }
