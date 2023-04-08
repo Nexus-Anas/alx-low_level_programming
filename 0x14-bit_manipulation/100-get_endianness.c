@@ -13,5 +13,6 @@ int get_endianness(void)
 
 	if (!*p)
 		return (0);
-	return (1);
+	else
+		return (1);
 }
