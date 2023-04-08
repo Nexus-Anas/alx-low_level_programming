@@ -19,7 +19,7 @@ void print_binary(unsigned long int n)
 	while (highest_bit > 0)
 	{
 		index = !!(highest_bit & n);
-		putchar('0' + index);
+		_putchar('0' + index);
 		highest_bit >>= 1;
 	}
 }
