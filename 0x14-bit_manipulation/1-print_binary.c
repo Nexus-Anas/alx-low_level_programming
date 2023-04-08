@@ -10,16 +10,7 @@
 
 void print_binary(unsigned long int n)
 {
-	int index;
-	unsigned long int highest_bit = 1;
-
-	while ((highest_bit << 1) <= n)
-		highest_bit <<= 1;
-
-	while (highest_bit > 0)
-	{
-		index = !!(highest_bit & n);
-		_putchar('0' + index);
-		highest_bit >>= 1;
-	}
+	if (n > 1)
+		print_binary(n >> 1);
+	_putchar((n & 1) + '0');
 }
