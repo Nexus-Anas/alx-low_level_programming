@@ -14,33 +14,16 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file = fopen(filename, "r");
-	char *memo = (char *) malloc(letters * sizeof(char));
-	size_t read = fread(memo, sizeof(char), letters, file);
-	size_t write = fwrite(memo, sizeof(char), read, stdout);
+	ssize_t r, w, descriptor;
+	char *memo;
 
-	if (filename == NULL)
+	descriptor = open(filename, O_RDONLY);
+	if (descriptor == -1)
 		return (0);
-	if (file == NULL)
-		return (0);
-	if (memo == NULL)
-	{
-		fclose(file);
-		return (0);
-	}
-	if (ferror(file) && read != letters)
-	{
-		fclose(file);
-		free(memo);
-		return (0);
-	}
-	if (read != write)
-	{
-		fclose(file);
-		free(memo);
-		return (0);
-	}
-	fclose(file);
+	memo = malloc(sizeof(char) * letters);
+	r = read(descriptor, memo, letters);
+	w = write(STDOUT_FILENO, memo, r);
 	free(memo);
-	return (write);
+	close(descriptor);
+	return (w);
 }
