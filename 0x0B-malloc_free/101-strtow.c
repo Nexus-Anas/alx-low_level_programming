@@ -24,7 +24,7 @@ int count_word(char *s)
 		}
 		i++;
 	}
-	return (j);	
+	return (j);
 }
 
 /**
@@ -42,7 +42,7 @@ char **strtow(char *str)
 	{
 		l++;
 	}
-	words = count_word(str);	
+	words = count_word(str);
 	if (words == 0)
 	{
 		return (NULL);
@@ -51,7 +51,7 @@ char **strtow(char *str)
 	if (matrix == NULL)
 	{
 		return (NULL);
-	}	
+	}
 	while (i <= l;)
 	{
 		if (str[i] == ' ' || str[i] == '\0')
