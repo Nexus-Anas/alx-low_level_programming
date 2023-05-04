@@ -13,7 +13,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int searched_bit;
 
-	if (index >= sizeof(unsigned long int) *8)
+	if (index >= sizeof(unsigned long int) * 8)
 		return (-1);
 	searched_bit = 1UL << index;
 	return ((n & searched_bit) != 0);
