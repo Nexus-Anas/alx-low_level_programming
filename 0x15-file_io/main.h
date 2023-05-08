@@ -13,6 +13,7 @@ int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
 
 #define MEMO_SIZE 1024
-void print_ERR(char *errorMSG, char *f, int value);
+void F_CLOSE(int current_file);
+char *CREATE_MEMO(char *ptr);
 
 #endif
