@@ -6,5 +6,7 @@
 #include <stddef.h>
 
 unsigned int binary_to_uint(const char *n);
+void print_binary(unsigned long int n);
+int _putchar(char ch);
 
 #endif
